@@ -15,11 +15,11 @@ function render(vnode, container) {
       } else {
         element.setAttribute(key, value);
       }
-      if (vnode.children) {
-        for (const child of vnode.children) {
-          render(child, element);
-        }
-      }
+    }
+  }
+  if (vnode.children) {
+    for (const child of vnode.children) {
+      render(child, element);
     }
   }
   container.appendChild(element);
@@ -27,7 +27,12 @@ function render(vnode, container) {
 
 // index.ts
 var count = 0;
-var App = createElement("div", { id: "app" }, createElement("h1", null, "Bun + TS で作ったフレームワーク！"), createElement("p", null, "ボタンをクリックしてみて！"), createElement("button", {
+var App = createElement("div", {
+  id: "app",
+  onclick: () => {
+    console.log("clicked");
+  }
+}, createElement("h1", null, "Bun + TS で作ったフレームワーク！"), createElement("p", null, "ボタンをクリックしてみて！"), createElement("button", {
   onClick: () => {
     alert("クリックされた！");
     count++;

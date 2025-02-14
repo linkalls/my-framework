@@ -4,7 +4,12 @@ let count = 0;
 // ここでcreateElementを使って、Appコンポーネントを作る
 const App = createElement(
   "div",
-  { id: "app" },
+  {
+    id: "app",
+    onclick: () => {
+      console.log("clicked");
+    },
+  },
   createElement("h1", null, "Bun + TS で作ったフレームワーク！"),
   createElement("p", null, "ボタンをクリックしてみて！"),
   createElement(

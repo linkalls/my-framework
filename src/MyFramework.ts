@@ -27,11 +27,11 @@ export function render(vnode: VNode | string, container: HTMLElement): void {
       } else {
         element.setAttribute(key, value);
       }
-      if (vnode.children) {
-        for (const child of vnode.children) {
-          render(child, element);
-        }
-      }
+    }
+  }
+  if (vnode.children) {
+    for (const child of vnode.children) {
+      render(child, element);
     }
   }
 
