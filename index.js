@@ -26,7 +26,14 @@ function render(vnode, container) {
 }
 
 // index.ts
-var App = createElement("div", { id: "app" }, createElement("h1", null, "Bun + TS で作ったフレームワーク！"), createElement("p", null, "ボタンをクリックしてみて！"), createElement("button", { onClick: () => alert("クリックされた！") }, "クリック"));
+var count = 0;
+var App = createElement("div", { id: "app" }, createElement("h1", null, "Bun + TS で作ったフレームワーク！"), createElement("p", null, "ボタンをクリックしてみて！"), createElement("button", {
+  onClick: () => {
+    alert("クリックされた！");
+    count++;
+    console.log(count);
+  }
+}, "クリックしてね！"));
 var root = document.getElementById("root");
 render(App, root);
 console.log(JSON.stringify(App, null, 2));

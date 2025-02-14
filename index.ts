@@ -1,4 +1,5 @@
 import { createElement, render } from "./src/MyFramework";
+let count = 0;
 
 // ここでcreateElementを使って、Appコンポーネントを作る
 const App = createElement(
@@ -8,8 +9,14 @@ const App = createElement(
   createElement("p", null, "ボタンをクリックしてみて！"),
   createElement(
     "button",
-    { onClick: () => alert("クリックされた！") },
-    "クリック"
+    {
+      onClick: () => {
+        alert("クリックされた！");
+        count++;
+        console.log(count);
+      },
+    },
+    "クリックしてね！"
   )
 );
 
