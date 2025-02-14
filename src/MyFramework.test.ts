@@ -30,7 +30,7 @@ describe("createElement function", () => {
   test("複数の子要素を持つVNodeオブジェクトを返すかテスト", () => {
     // Additional tests for createElement function
     test("空のpropsとchildrenの場合のテスト", () => {
-      const result = createElement("div", {}, []);
+      const result = createElement("div", {});
       expect(result).toEqual({
         tag: "div", 
         props: {},
