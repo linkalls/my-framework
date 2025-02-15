@@ -1,4 +1,4 @@
-import { createElement, render } from "./src/MyFramework";
+import { createElement, render } from "./src/neonX";
 let count = 0;
 
 // ここでcreateElementを使って、Appコンポーネントを作る

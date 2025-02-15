@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { createElement } from "./MyFramework";
+import { createElement } from "./neonX";
 
 describe("createElement function", () => {
   // should return a VNode object with the correct tag when only tag is provided
@@ -32,9 +32,9 @@ describe("createElement function", () => {
     test("空のpropsとchildrenの場合のテスト", () => {
       const result = createElement("div", {});
       expect(result).toEqual({
-        tag: "div", 
+        tag: "div",
         props: {},
-        children: []
+        children: [],
       });
     });
 
@@ -51,15 +51,19 @@ describe("createElement function", () => {
       expect(result).toEqual({
         tag: "div",
         props: { class: "wrapper" },
-        children: [{
-          tag: "div", 
-          props: { class: "inner" },
-          children: [{
-            tag: "span",
-            props: null,
-            children: ["Inner text"]
-          }]
-        }]
+        children: [
+          {
+            tag: "div",
+            props: { class: "inner" },
+            children: [
+              {
+                tag: "span",
+                props: null,
+                children: ["Inner text"],
+              },
+            ],
+          },
+        ],
       });
     });
 
@@ -67,16 +71,16 @@ describe("createElement function", () => {
       const result = createElement("div", {
         id: "test",
         class: "container",
-        "data-test": "value"
+        "data-test": "value",
       });
       expect(result).toEqual({
         tag: "div",
         props: {
           id: "test",
           class: "container",
-          "data-test": "value"
+          "data-test": "value",
         },
-        children: undefined
+        children: undefined,
       });
     });
   });
